@@ -10,7 +10,7 @@ class LapanganController extends Controller
     public function getAllLapangan()
     {
         try {
-            $lapangans = Lapangan::get();
+            $lapangans = Lapangan::all();
             return response()->json([
                 'message' => 'Successfully get all lapangan!',
                 'data' => $lapangans,
