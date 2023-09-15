@@ -6,6 +6,7 @@ use App\Enums\RoleEnum;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -18,6 +19,7 @@ class UserSeeder extends Seeder
     {
         // customer
         User::create([
+            'id' => Str::uuid(),
             'name' => 'Zulfan Faizal',
             'email' => 'zulfan@example.com',
             'password' => Hash::make('password'),
@@ -27,6 +29,7 @@ class UserSeeder extends Seeder
 
         // admin
         User::create([
+            'id' => Str::uuid(),
             'name' => 'Admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
@@ -36,6 +39,7 @@ class UserSeeder extends Seeder
 
         // pengelola
         User::create([
+            'id' => Str::uuid(),
             'name' => 'Pengelola',
             'email' => 'pengelola@example.com',
             'password' => Hash::make('password'),
