@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
     {
         // customer
         User::create([
-            'id' => Str::uuid(),
+            'id_user' => Str::uuid(),
             'name' => 'Zulfan Faizal',
             'email' => 'zulfan@example.com',
             'password' => Hash::make('password'),
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
 
         // admin
         User::create([
-            'id' => Str::uuid(),
+            'id_user' => Str::uuid(),
             'name' => 'Admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
 
         // pengelola
         User::create([
-            'id' => Str::uuid(),
+            'id_user' => Str::uuid(),
             'name' => 'Pengelola',
             'email' => 'pengelola@example.com',
             'password' => Hash::make('password'),

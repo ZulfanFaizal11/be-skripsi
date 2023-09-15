@@ -14,7 +14,7 @@ class CreateLapanganTable extends Migration
     public function up()
     {
         Schema::create('lapangan', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id_lapangan')->primary();
             $table->string('nama_lapangan');
             $table->integer('price');
             $table->timestamps();

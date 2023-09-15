@@ -16,13 +16,13 @@ class LapanganSeeder extends Seeder
     public function run()
     {
         Lapangan::create([
-            'id' => Str::uuid(),
+            'id_lapangan' => Str::uuid(),
             'nama_lapangan' => 'Lapangan 1',
             'price' => 20000
         ]);
 
         Lapangan::create([
-            'id' => Str::uuid(),
+            'id_lapangan' => Str::uuid(),
             'nama_lapangan' => 'Lapangan 2',
             'price' => 30000
         ]);
