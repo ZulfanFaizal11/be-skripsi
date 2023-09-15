@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,13 +28,21 @@ Route::prefix('v1')->group(function () {
 
     // auth
     Route::post('/login', [UserController::class, 'postLogin']);
-
     Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('restricted', function () {
-            return 'restricted route!';
+            $user = Auth::user();
+            return response()->json([
+                'msg' => 'Protected route!',
+                'user' => $user,
+            ]);
         });
 
         Route::post('/register', [UserController::class, 'postRegister']);
         Route::post('/logout', [UserController::class, 'postLogout']);
+    });
+
+    // lapangan
+    Route::group(['prefix' => '/lapangan'], function () {
+        Route::get('all', [LapanganController::class, 'getAllLapangan']);
     });
 });
