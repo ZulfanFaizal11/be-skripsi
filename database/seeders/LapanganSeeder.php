@@ -26,5 +26,11 @@ class LapanganSeeder extends Seeder
             'nama_lapangan' => 'Lapangan 2',
             'price' => 30000
         ]);
+
+        Lapangan::create([
+            'id_lapangan' => Str::uuid(),
+            'nama_lapangan' => 'Lapangan 3',
+            'price' => 40000
+        ]);
     }
 }

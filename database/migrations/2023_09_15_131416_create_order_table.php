@@ -16,6 +16,7 @@ class CreateOrderTable extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->uuid('id_order')->primary();
             $table->foreignUuid('id_lapangan');
+            $table->foreignUuid('id_user');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->integer('total_price');

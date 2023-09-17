@@ -44,5 +44,6 @@ Route::prefix('v1')->group(function () {
     // lapangan
     Route::group(['prefix' => '/lapangan'], function () {
         Route::get('all', [LapanganController::class, 'getAllLapangan']);
+        Route::get('ordered', [LapanganController::class, 'getLapanganOrderd']);
     });
 });
