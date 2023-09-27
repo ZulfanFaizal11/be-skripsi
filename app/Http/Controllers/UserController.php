@@ -36,7 +36,7 @@ class UserController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'message' => 'Wrong email or password!',
-                'error' => 'Unauthorized',
+                'error' => $e->getMessage(),
             ], 401);
         }
     }

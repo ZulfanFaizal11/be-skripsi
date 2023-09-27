@@ -41,6 +41,5 @@ class User extends Authenticatable
 
     protected $guarded = [''];
     public $incrementing = false;
-    protected $primaryKey = 'id';
-    protected $keyType = 'string';
+    protected $primaryKey = 'id_user';
 }
