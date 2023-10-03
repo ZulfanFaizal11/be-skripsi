@@ -26,8 +26,10 @@ Route::prefix('v1')->group(function () {
         return 'Services running successfully!!🚀🚀🚀';
     });
 
-    // auth
+    // auth login
     Route::post('/login', [UserController::class, 'postLogin']);
+
+    // authenticated
     Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('restricted', function () {
             $user = Auth::user();
@@ -39,11 +41,18 @@ Route::prefix('v1')->group(function () {
 
         Route::post('/register', [UserController::class, 'postRegister']);
         Route::post('/logout', [UserController::class, 'postLogout']);
+
+        // admin
+        Route::group(['prefix' => '/admin', 'middleware' => 'auth.admin'], function () {
+            Route::get('lapangan-update', function () {
+                return 'lapangan update';
+            });
+        });
     });
 
     // lapangan
     Route::group(['prefix' => '/lapangan'], function () {
         Route::get('all', [LapanganController::class, 'getAllLapangan']);
-        Route::get('ordered', [LapanganController::class, 'getLapanganOrderd']);
+        Route::get('ordered', [LapanganController::class, 'getLapanganOrder']);
     });
 });
